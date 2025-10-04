@@ -49,3 +49,19 @@
 //   console.log(`runnnn cause ${period} and ${text}`)
 // })
 // school.startPeriod()
+
+
+// import http from 'http'
+// const server = http.createServer()
+// server.on('connection', () => {
+//   console.log('connection on')
+// })
+// server.listen(3000)
+// console.log('listening on port 3000')
+
+import http from 'http'
+const server = http.createServer((req, res) => {
+  res.write('hello devs')
+})
+server.listen(3000)
+console.log('listening on port 3000')
