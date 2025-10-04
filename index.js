@@ -59,19 +59,32 @@
 // server.listen(3000)
 // console.log('listening on port 3000')
 
-import http from 'http'
-const server = http.createServer((req, res) => {
-  if (req.url === '/') {
-    res.write('hello devs')
-    res.write(' hello developers')
-    res.end()
-  } else if (req.url === '/about') {
-    res.write('hello devs its about page')
-    res.end()
-  } else {
-    res.write('not found')
-    res.end()
-  }
+// import http from 'http'
+// const server = http.createServer((req, res) => {
+//   if (req.url === '/') {
+//     res.write('hello devs')
+//     res.write(' hello developers')
+//     res.end()
+//   } else if (req.url === '/about') {
+//     res.write('hello devs its about page')
+//     res.end()
+//   } else {
+//     res.write('not found')
+//     res.end()
+//   }
+// })
+// server.listen(3000)
+// console.log('listening on port 3000')
+
+
+// import fs from 'fs'
+// const ourReadStream = fs.createReadStream(`${__dirname}/bigData.txt`, 'utf8')
+// ourReadStream.on('data', chunk => {
+//   console.log(chunk)
+// })
+
+import fs from 'fs'
+const ourReadStream = fs.createReadStream(`${__dirname}/bigData.txt`)
+ourReadStream.on('data', chunk => {
+  console.log(chunk.toString())
 })
-server.listen(3000)
-console.log('listening on port 3000')
